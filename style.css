@@ -49,7 +49,7 @@ main {
   padding: 8px;
   width: 100%;
   background: var(--bg-primary);
-  box-shadow: 0 -4px 4px #0004;
+  box-shadow: 0 -4px 4px #0002;
 }
 
 .attribution a {

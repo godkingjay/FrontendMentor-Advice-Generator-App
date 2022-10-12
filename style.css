@@ -27,6 +27,21 @@ main {
   position: relative;
 }
 
+.main-content {
+  display: flex;
+  flex: 1;
+  margin: 16px;
+  flex-direction: column;
+}
+
+.advice-card-wrapper {
+  margin: auto;
+}
+
+.advice-card {
+  margin-block: 64px;
+}
+
 .attribution-ctn {
   position: absolute;
   bottom: 0;

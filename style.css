@@ -17,6 +17,7 @@
   --clr-secondary: hsl(193, 38%, 86%);
 
   --clr-texts: hsl(193, 38%, 86%);
+  --clr-advice-id: hsl(150, 100%, 66%);
 
   --font-advice: 'Manrope Bold';
   --font-texts: 'Manrope';
@@ -41,6 +42,14 @@ main {
   position: relative;
 }
 
+p {
+  color: var(--clr-advice-id);
+}
+
+h1 {
+  font-family: var(--font-advice);
+}
+
 .main-content {
   display: flex;
   flex: 1;
@@ -55,9 +64,86 @@ main {
 .advice-card {
   margin-block: 64px;
   background: var(--bg-secondary);
-  padding: 32px;
+  padding: 48px;
   border-radius: 12px;
   box-shadow: 0 16px 16px #0002;
+  text-align: center;
+  max-width: 512px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.advice-card > p {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 600;
+}
+
+.advice-card > h1 {
+  line-height: 120%;
+}
+
+.advice-card-divider {
+  display: flex;
+  background-image: url('./images/pattern-divider-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 32px;
+  margin-block: 16px;
+}
+
+.advice-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 50%);
+}
+
+.btn-advice-generator {
+  aspect-ratio: 1;
+  height: 100%;
+  border-radius: 50%;
+  padding: 20px;
+  border: none;
+  background: var(--clr-primary);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-advice-generator:hover {
+  box-shadow: 0 0 32px var(--clr-primary);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn-advice-generator > span {
+  display: flex;
+  height: 100%;
+  aspect-ratio: 1;
+  background-image: url('./images/icon-dice.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-advice-generator:hover > span {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25%, 100% {
+    transform: rotate(360deg);
+  }
 }
 
 .attribution-ctn {

@@ -141,7 +141,7 @@ h1 {
   0% {
     transform: rotate(0deg);
   }
-  25%, 100% {
+  50%, 100% {
     transform: rotate(360deg);
   }
 }
@@ -173,4 +173,35 @@ h1 {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 384px) {
+  .advice-card-divider {
+    background-image: url('./images/pattern-divider-mobile.svg');
+  }
+}
+
+@media (max-width: 336px) {
+  .advice-card {
+    padding: 32px;
+  }
+
+  .advice-card > p {
+    font-size: 14px;
+  }
+
+  .advice-card > h1 {
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 256px) {
+  .advice-card > h1 {
+    font-size: 20px;
+  }
+
+  .advice-card-divider {
+    margin-top: 8px;
+  }
 }

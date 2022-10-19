@@ -1,19 +1,17 @@
-const adviceDisplay = [document.querySelector('.advice-id'), document.querySelector('.advice-text')];
+const adviceId = document.querySelector('.advice-id');
+const adviceText = document.querySelector('.advice-text');
 const adviceGeneratorBtn = document.querySelector('.btn-advice-generator');
 
-async function generatAdvice(){
-  let advice = await fetch('https://api.adviceslip.com/advice');
-  let result = await advice.json().then(data => data.slip);
-  advice = null;
-  return result;
+window.onload = generateAdvice;
+
+adviceGeneratorBtn.addEventListener('click', generateAdvice);
+
+function generateAdvice(){
+  fetch('https://api.adviceslip.com/advice')
+  .then(response => response.json())
+  .then(data => data.slip)
+  .then(data => {
+    adviceId.textContent = data.id;
+    adviceText.textContent = data.advice;
+  });
 }
-
-async function setAdvice(){
-  let advice = await generatAdvice();
-  console.log(advice);
-  adviceDisplay[0].textContent = advice.id;
-  adviceDisplay[1].textContent = `"${advice.advice}"`;
-};
-
-setAdvice();
-adviceGeneratorBtn.addEventListener('click', setAdvice);
